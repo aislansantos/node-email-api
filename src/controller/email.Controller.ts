@@ -19,11 +19,12 @@ export const contato = async (req: Request, res: Response) => {
 
     // Passo 2 -> Configurar a mensagem a ser enviada
     let message = {
-        from: "Aislan Santos <aislan.santos@gmail.com>",
-        to: "aislan_85@yahoo.com.br",
-        subject: "Assunto Legal",
-        html: "Opa <strong>Aislan</strong>, como vai ?",
-        text: "Opa Aislan como vai ?"
+        from: "não-responda@gmail.com",
+        to: "aislan.santos@gmail.com",
+        replyTo: req.body.from,
+        subject: req.body.subject,
+        html: req.body.email,
+        text: req.body.email,
     };
 
     // Passo 3 -> Enviar a mensagem
